@@ -7,6 +7,7 @@ Authors: Chenhui Shen, Liying Cheng, Xuan-Phi Nguyen, Yang You and Lidong Bing
 
 This repository contains code and related resources of the paper "Large Language Models are Not Yet Human-Level Evaluators for Abstractive Summarization".
 
+```bibtex
 @inproceedings{shen2023llmeval,
   title={Large Language Models are Not Yet Human-Level Evaluators for Abstractive Summarization},
   author={Shen, Chenhui and Cheng, Liying and Nguyen, Xuan-Phi and Bing, Lidong and You, Yang},
@@ -14,8 +15,7 @@ This repository contains code and related resources of the paper "Large Language
   url={"https://arxiv.org/abs/2305.13091"},
   year={2023}
 }
-
-
+```
 
 ### 1. Set up the environment
 ```yaml
@@ -26,8 +26,11 @@ pip install openai, tqdm, scipy, sercet
 ```
 
 ### 2. Set the openai key:
-Creat a file named secret.py and set the openai key in format: my_key = 'XXX'
-
+Creat a file named secret.py and set the openai key in format:
+```yaml
+# Set your openai key, refer: https://openai.com/index/openai-api/
+my_key = 'Enter your openai api key'
+```
 ### 3. Demo:
 #### This demo only use gpt-3.5-turbo-0301 as evaluation model.
 
@@ -44,20 +47,30 @@ python eval_with_rts_or_mcq.py --eval_model gpt-3.5-turbo-0301 --dim 0 --eval_ty
 ```yaml
 python extract_model_scores.py --eval_model gpt-3.5-turbo-0301
 ```
+Part output as shown below:
+
+![1381720374334_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/3f06a882-0799-436d-b7ce-5b4931f0631e)
+
 - Step 3.1: Calculate correlation for all 1200 summaries
 ```yaml
 python calc_data_corr.py --eval_model gpt-3.5-turbo-0301 --eval_type 0
 ```
+The output as shown below:
+
 ![4221720366686_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/644661a6-f66e-4498-839d-041072e0ec26)
 
 - Step 3.2: Calculate correlation for each candidate model
 ```yaml
 python per_model_corr.py --eval_model gpt-3.5-turbo-0301 --eval_type 0
 ```
+The output as shown below:
+
 ![4231720366691_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/c882d006-ec8f-403a-8676-852457914eba)
 
 - Step 3.3: Calculate meta-correlation
 ```yaml
 python calc_meta_corr.py --eval_model gpt-3.5-turbo-0301
-```  
+```
+The output as shown below:
+
 ![4251720366810_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/0091aed3-6574-4696-9e6a-fd0fbf028b8c)
