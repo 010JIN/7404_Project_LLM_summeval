@@ -1,13 +1,11 @@
 # Demo for paper: Large Language Models are Not Yet Human-Level Evaluators for Abstractive Summarization
 
-
 ##  Refer: 
 https://github.com/DAMO-NLP-SG/LLM_summeval.git
 
 Authors: Chenhui Shen, Liying Cheng, Xuan-Phi Nguyen, Yang You and Lidong Bing
 
 This repository contains code and related resources of the paper "Large Language Models are Not Yet Human-Level Evaluators for Abstractive Summarization".
-
 
 @inproceedings{shen2023llmeval,
   title={Large Language Models are Not Yet Human-Level Evaluators for Abstractive Summarization},
@@ -50,11 +48,16 @@ python extract_model_scores.py --eval_model gpt-3.5-turbo-0301
 ```yaml
 python calc_data_corr.py --eval_model gpt-3.5-turbo-0301 --eval_type 0
 ```
+![4221720366686_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/644661a6-f66e-4498-839d-041072e0ec26)
+
 - Step 3.2: Calculate correlation for each candidate model
 ```yaml
 python per_model_corr.py --eval_model gpt-3.5-turbo-0301 --eval_type 0
 ```
+![4231720366691_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/c882d006-ec8f-403a-8676-852457914eba)
+
 - Step 3.3: Calculate meta-correlation
 ```yaml
 python calc_meta_corr.py --eval_model gpt-3.5-turbo-0301
 ```  
+![4251720366810_ pic](https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/0091aed3-6574-4696-9e6a-fd0fbf028b8c)
