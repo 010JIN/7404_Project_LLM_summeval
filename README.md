@@ -87,8 +87,9 @@ my_key = 'Enter your openai api key'
 
 For RTS or MCQ
 - Step 1: Get RTS or MCQ response from openai APIs
+- 
 ```yaml
-# If you wish to see prompt first without calling the actual api, use flag --print_full_prompt_without_calling_api 
+# Set print_full_prompt_without_calling_api = True for demo, in case of any fail connection of Openai.
 # For dim, 0 is relevance, 1 is consistency, 2 is fluency, and 3 is coherence;
 # For eval_type, 0 is RTS, 1 is MCQ, 2 is StarEval.
 # !python eval_with_rts_or_mcq.py --eval_model <openai model> --dim <int from 0 to 4> --eval_type <int from 0 to 3> 
