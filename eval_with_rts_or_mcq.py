@@ -31,7 +31,7 @@ def parse_arguments(parser):
     parser.add_argument('--start_idx', type=int, default=0, help="evaluated example line start index, don't change unless need to rerun due to chatgpt gives error half way...")
     parser.add_argument('--end_idx', type=int, default=100, help="evaluated example line end index, don't change unless need to rerun due to chatgpt gives error half way...")
 
-    parser.add_argument('--print_full_prompt_without_calling_api', action="store_true", default=False,
+    parser.add_argument('--print_full_prompt_without_calling_api', action="store_true", default=True,
                         help="print the full prompt for each example")
 
     args = parser.parse_args()
@@ -54,7 +54,9 @@ eval_types = {
 }
 
 def call_api(eval_type_id, aspect_id, summary, article, results_dir, print_only=False, eval_max_len=128):
-    # send request
+    # 确保 aspect_id 在有效范围内
+    assert aspect_id in range(4), f"aspect_id {aspect_id} 不在有效范围内"
+    
     if eval_type_id == 0:
         eval_prompt = prepare_rts_prompt(aspect_id, summary, article)
     elif eval_type_id == 1:
