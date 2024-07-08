@@ -17,6 +17,26 @@ This repository contains code and related resources of the paper "Large Language
 }
 ```
 
+### Catalogue:
+* <a href='#introduction'>1. Introduction</a>
+* <a href='#file'>2. File Contents </a>
+* <a href='#reproduce_examples'>3. Running the code</a>
+
+    
+****
+
+<span id='introduction'/>
+
+# 1. Introduction:
+
+Pre-trained language models (PLMs) have accomplished impressive achievements in abstractive single-document summarization (SDS). However, such benefits may not be readily extended to muti-document summarization (MDS), where the interactions among documents are more complex. Previous works either design new architectures or new pre-training objectives for MDS, or apply PLMs to MDS without considering the complex document interactions. While the former does not make full use of previous pre-training efforts and may not generalize well across multiple domains, the latter cannot fully attend to the intricate relationships unique to MDS tasks. In this paper, we enforce hierarchy on both the encoder and decoder and seek to make better use of a PLM to facilitate multi-document interactions for the MDS task. We test our design on 10 MDS datasets across a wide range of domains. Extensive experiments show that our proposed method can achieve consistent improvements on all these datasets, outperforming the previous best models, and even achieving better or competitive results as compared to some models with additional MDS pre-training or larger model parameters.
+
+****
+
+
+<span id='file'/>
+
+
 ### 1. Set up the environment
 ```yaml
 git clone https://github.com/010JIN/7404_Project_LLM_summeval.git
