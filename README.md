@@ -83,7 +83,7 @@ Creat a file named secret.py and set the openai key in format:
 my_key = 'Enter your openai api key'
 ```
 ### 3.3. Demo:
-#### This demo only use gpt-3.5-turbo-0301 as evaluation model.
+#### This demo only use gpt-3.5-turbo-0301 as evaluation model because of the GPU resource and the api token for Openai is limiting. The GPT 4 and other versions sometimes are not allowed to visit due serve country limit problem probably.
 
 For RTS or MCQ
 - Step 1: Get RTS or MCQ response from openai APIs
