@@ -94,6 +94,8 @@ For RTS or MCQ
 # !python eval_with_rts_or_mcq.py --eval_model <openai model> --dim <int from 0 to 4> --eval_type <int from 0 to 3> 
 python eval_with_rts_or_mcq.py --eval_model gpt-3.5-turbo-0301 --dim 0 --eval_type 0 
 ```
+<img width="934" alt="image" src="https://github.com/010JIN/7404_Project_LLM_summeval/assets/105320955/98339e9a-d420-4580-8105-edf9a195feb1">
+
 - Step 2: Compile a new data file with all metric results
 ```yaml
 python extract_model_scores.py --eval_model gpt-3.5-turbo-0301
