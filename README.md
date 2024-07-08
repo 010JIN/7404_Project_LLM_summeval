@@ -87,7 +87,7 @@ my_key = 'Enter your openai api key'
 
 For RTS or MCQ
 - Step 1: Get RTS or MCQ response from openai APIs
-- 
+
 ```yaml
 # Set print_full_prompt_without_calling_api = True for demo, in case of any fail connection of Openai.
 # For dim, 0 is relevance, 1 is consistency, 2 is fluency, and 3 is coherence;
