@@ -72,7 +72,8 @@ Under Root Dir,
 git clone https://github.com/010JIN/7404_Project_LLM_summeval.git
 ```
 ```yaml
-pip install openai, tqdm, scipy, sercet
+# Make sure the version of openai is updated.
+pip install openai==0.28, tqdm, scipy, sercet
 ```
 
 ### 3.2. Set the openai key:
