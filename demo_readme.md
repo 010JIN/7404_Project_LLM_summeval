@@ -36,8 +36,38 @@ Pre-trained language models (PLMs) have accomplished impressive achievements in 
 
 <span id='file'/>
 
+# 2. File Contents
 
-### 1. Set up the environment
+Under Root Dir,
+
+* ``model_output_annotations/``: our processed <a href="https://github.com/Yale-LILY/SummEval"> SummEval </a> annotations for the abstractive summarization systems.
+
+* ``eval_model_generations/``:  the outputs of LLM evaluations using RTS, MCQ or alternative prompts, under respective directories of the evaluation model name, with the evaluation method in the postfix (e.g., ``_rts.json``, ``_mcq.json``, etc.)
+
+* ``comp_data/``: our processed head-to-head comparison inputs from models in the <a href="https://github.com/Yale-LILY/SummEval"> SummEval </a> dataset.
+
+* ``comp_res/``: the output of LLM evaluations using H2H prompts.
+
+* ``summeval.json``: the same file taken from <a href="https://github.com/krystalan/chatgpt_as_nlg_evaluator/tree/main/data"> this </a> repo.
+
+* ``eval_with_rts_or_mcq.py``: call ChatGPT or GPT-4 to evaluate with RTS or MCQ prompts; in order to run, add your own openai api key in ``secret.py``
+
+* ``extract_model_scores.py``: extract all the llm-evaluated scores for a specific model stored under ``model_output_annotations`` 
+
+* ``calc_data_corr.py``: to calculate correlation using the full 1200 summaries (results in Tab 5) for a given evaluator model.
+
+* ``per_model_corr.py``: to calculate correlation for each candidate model.
+
+* ``calc_meta_corr.py``: to calculate meta-correlation for a given evaluator model.
+
+
+
+
+<span id='reproduce_examples'/>
+
+# 3. Running the code
+
+### 3.1. Set up the environment
 ```yaml
 git clone https://github.com/010JIN/7404_Project_LLM_summeval.git
 ```
@@ -45,13 +75,13 @@ git clone https://github.com/010JIN/7404_Project_LLM_summeval.git
 pip install openai, tqdm, scipy, sercet
 ```
 
-### 2. Set the openai key:
+### 3.2. Set the openai key:
 Creat a file named secret.py and set the openai key in format:
 ```yaml
 # Set your openai key, refer: https://openai.com/index/openai-api/
 my_key = 'Enter your openai api key'
 ```
-### 3. Demo:
+### 3.3. Demo:
 #### This demo only use gpt-3.5-turbo-0301 as evaluation model.
 
 For RTS or MCQ
